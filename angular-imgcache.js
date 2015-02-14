@@ -60,7 +60,7 @@ angular.module('ImgCache', [])
             var loadImg = function(type, el, src) {
 
                 ImgCache.$promise.then(function() {
-                    if (!src) return;
+
                     ImgCache.isCached(src, function(path, success) {
 
                         if (success) {
@@ -76,15 +76,18 @@ angular.module('ImgCache', [])
             }
 
             attrs.$observe('icSrc', function(src) {
-
-                loadImg('src', el, src);
+                if (src)
+                    loadImg('src', el, src);
+                else 
+                    console.log('catched bad src: ' + src);
 
             });
 
             attrs.$observe('icBg', function(src) {
-
-                loadImg('bg', el, src);
-
+                if (src)
+                    loadImg('bg', el, src);
+                else 
+                    console.log('catched bad src: ' + src);
             });
 
         }

@@ -60,7 +60,7 @@ angular.module('ImgCache', [])
             var loadImg = function(type, el, src) {
 
                 ImgCache.$promise.then(function() {
-
+                    if (!src) return;
                     ImgCache.isCached(src, function(path, success) {
 
                         if (success) {

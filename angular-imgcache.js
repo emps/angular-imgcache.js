@@ -79,7 +79,7 @@ angular.module('ImgCache', [])
                 if (src)
                     loadImg('src', el, src);
                 else 
-                    console.log('catched bad src: ' + src);
+                    console.log('cached bad src: ' + src);
 
             });
 
@@ -87,7 +87,7 @@ angular.module('ImgCache', [])
                 if (src)
                     loadImg('bg', el, src);
                 else 
-                    console.log('catched bad src: ' + src);
+                    console.log('cached bad src: ' + src);
             });
 
         }
